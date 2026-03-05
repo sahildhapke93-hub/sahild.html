@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 4 - HTML5 Tables</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #f1f5f9; font-family: 'DM Sans', sans-serif; color: #1e293b; padding: 30px 20px; }
+    h1.page-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; color: #0f172a; text-align: center; margin-bottom: 4px; }
+    .subtitle { text-align: center; color: #64748b; font-size: 0.9rem; margin-bottom: 36px; }
+    .section-card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+    .section-card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; margin-bottom: 18px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    caption { font-size: 0.85rem; color: #64748b; margin-bottom: 12px; font-style: italic; text-align: left; }
+    /* TIMETABLE */
+    .timetable thead tr { background: #1e40af; color: white; }
+    .timetable thead th { padding: 12px 16px; text-align: center; }
+    .timetable tbody tr:nth-child(even) { background: #f8faff; }
+    .timetable tbody tr:hover { background: #eff6ff; }
+    .timetable td { padding: 11px 14px; text-align: center; border: 1px solid #e2e8f0; }
+    .timetable td:first-child { font-weight: 600; background: #f0f4ff; color: #1e40af; }
+    .timetable tfoot { background: #1e40af; color: white; }
+    .timetable tfoot td { padding: 10px 14px; text-align: center; font-weight: 600; }
+    .sub { border-radius: 6px; padding: 5px 10px; font-size: 0.82rem; font-weight: 500; }
+    .html { background: #fef3c7; color: #92400e; }
+    .css  { background: #dbeafe; color: #1e40af; }
+    .js   { background: #dcfce7; color: #166534; }
+    .math { background: #fce7f3; color: #9d174d; }
+    .phy  { background: #f3e8ff; color: #6b21a8; }
+    .free { background: #f1f5f9; color: #94a3b8; font-style: italic; }
+    .lab  { background: #ffedd5; color: #9a3412; }
+    /* STUDENT TABLE */
+    .student-table thead tr { background: #065f46; color: white; }
+    .student-table thead th { padding: 12px 16px; text-align: left; }
+    .student-table tbody tr:nth-child(even) { background: #f0fdf4; }
+    .student-table tbody tr:hover { background: #dcfce7; }
+    .student-table td { padding: 11px 16px; border-bottom: 1px solid #e2e8f0; }
+    .student-table td:first-child { font-weight: 700; color: #065f46; }
+    .student-table tfoot { background: #f0fdf4; }
+    .student-table tfoot td { padding: 10px 16px; font-weight: 600; color: #065f46; border-top: 2px solid #86efac; }
+    .grade { display: inline-block; padding: 2px 10px; border-radius: 12px; font-weight: 700; font-size: 0.82rem; }
+    .A { background: #dcfce7; color: #15803d; }
+    .B { background: #dbeafe; color: #1d4ed8; }
+    .C { background: #fef9c3; color: #a16207; }
+    .D { background: #fee2e2; color: #dc2626; }
+    .pass { background: #dcfce7; color: #15803d; padding: 3px 10px; border-radius: 12px; font-size: 0.82rem; }
+    .fail { background: #fee2e2; color: #dc2626; padding: 3px 10px; border-radius: 12px; font-size: 0.82rem; }
+  </style>
+</head>
+<body>
+<h1 class="page-title">Practical 4 — HTML5 Tables</h1>
+<p class="subtitle">Timetable & Student Record · colspan · rowspan · thead · tbody · tfoot</p>
+
+<div class="section-card">
+  <h2>📅 Class Timetable</h2>
+  <div class="table-wrap">
+    <table class="timetable">
+      <caption>Web Designing (VSC) · NEP 2025-26 Even Semester</caption>
+      <colgroup><col style="width:90px"><col><col><col><col><col></colgroup>
+      <thead><tr><th>Time / Day</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr></thead>
+      <tbody>
+        <tr><td>9:00–10:00</td><td><span class="sub html">HTML5</span></td><td><span class="sub math">Mathematics</span></td><td><span class="sub css">CSS3</span></td><td><span class="sub phy">Physics</span></td><td><span class="sub html">HTML5</span></td></tr>
+        <tr><td>10:00–11:00</td><td><span class="sub css">CSS3</span></td><td><span class="sub html">HTML5</span></td><td><span class="sub math">Mathematics</span></td><td><span class="sub js">JavaScript</span></td><td><span class="sub css">CSS3</span></td></tr>
+        <tr><td>11:00–12:00</td><td><span class="sub js">JavaScript</span></td><td><span class="sub css">CSS3</span></td><td><span class="sub html">HTML5</span></td><td><span class="sub math">Mathematics</span></td><td><span class="sub js">JavaScript</span></td></tr>
+        <tr><td>12:00–1:00</td><td colspan="5" style="text-align:center"><span class="sub free">🍽️ Lunch Break</span></td></tr>
+        <tr><td>1:00–3:00</td><td colspan="2"><span class="sub lab">💻 Web Design Lab</span></td><td><span class="sub free">Library</span></td><td colspan="2"><span class="sub lab">💻 Programming Lab</span></td></tr>
+        <tr><td>3:00–4:00</td><td><span class="sub math">Mathematics</span></td><td><span class="sub phy">Physics</span></td><td><span class="sub js">JavaScript</span></td><td><span class="sub css">CSS3</span></td><td><span class="sub free">Sports</span></td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="6">Total: 24 classes/week · Lab: 4 hrs · Credits: 18</td></tr></tfoot>
+    </table>
+
+</div>
+</div>
+
+<div class="section-card">
+  <h2>🎓 Student Record</h2>
+  <div class="table-wrap">
+    <table class="student-table">
+      <caption>CSE Division A — Mid-Semester Results 2025-26</caption>
+      <thead><tr><th>Roll No.</th><th>Student Name</th><th>HTML5</th><th>CSS3</th><th>JavaScript</th><th>Maths</th><th>Total</th><th>Grade</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>CS001</td><td>Aarav Sharma</td><td>23</td><td>22</td><td>20</td><td>24</td><td><strong>89</strong></td><td><span class="grade A">A</span></td><td><span class="pass">Pass</span></td></tr>
+        <tr><td>CS002</td><td>Priya Patel</td><td>21</td><td>24</td><td>23</td><td>22</td><td><strong>90</strong></td><td><span class="grade A">A</span></td><td><span class="pass">Pass</span></td></tr>
+        <tr><td>CS003</td><td>Rohan Desai</td><td>18</td><td>19</td><td>17</td><td>20</td><td><strong>74</strong></td><td><span class="grade B">B</span></td><td><span class="pass">Pass</span></td></tr>
+        <tr><td>CS004</td><td>Sneha Gupta</td><td>15</td><td>16</td><td>14</td><td>18</td><td><strong>63</strong></td><td><span class="grade C">C</span></td><td><span class="pass">Pass</span></td></tr>
+        <tr><td>CS005</td><td>Aditya Kumar</td><td>24</td><td>23</td><td>25</td><td>23</td><td><strong>95</strong></td><td><span class="grade A">A+</span></td><td><span class="pass">Pass</span></td></tr>
+        <tr><td>CS006</td><td>Meera Nair</td><td>10</td><td>09</td><td>08</td><td>11</td><td><strong>38</strong></td><td><span class="grade D">D</span></td><td><span class="fail">Fail</span></td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">Class Average</td><td>18.5</td><td>18.8</td><td>17.8</td><td>19.7</td><td><strong>74.8</strong></td><td>—</td><td>5/6 Pass</td></tr></tfoot>
+    </table>
+  </div>
+</div>
+</body>
+</html>
