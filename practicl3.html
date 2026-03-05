@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 3 - HTML5 Elements Demo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Fira+Code:wght@400;500&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: #f0f4ff; color: #2d3748; }
+    .topbar { background: #4c51bf; color: white; padding: 18px 40px; }
+    .topbar h1 { font-size: 1.6rem; font-weight: 900; }
+    .topbar p { font-size: 0.88rem; opacity: 0.8; margin-top: 3px; }
+    .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+    .card { background: white; border-radius: 14px; padding: 30px; margin-bottom: 28px; box-shadow: 0 4px 16px rgba(76,81,191,0.08); border-top: 4px solid #4c51bf; }
+    .card h2 { font-size: 1.25rem; font-weight: 900; color: #4c51bf; margin-bottom: 18px; }
+    .section-label { font-family: 'Fira Code', monospace; font-size: 0.8rem; background: #ebf4ff; color: #4c51bf; padding: 3px 10px; border-radius: 5px; margin-bottom: 10px; display: inline-block; }
+    hr.divider { border: none; border-top: 2px dashed #e2e8f0; margin: 18px 0; }
+    .text-demo p { line-height: 1.9; font-size: 1rem; color: #4a5568; }
+    .headings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .lists-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .list-box h3 { font-size: 0.95rem; font-weight: 700; color: #4c51bf; margin-bottom: 10px; }
+    .list-box ol { padding-left: 20px; }
+    .list-box ol li, .list-box ul li { margin-bottom: 6px; font-size: 0.95rem; color: #4a5568; }
+    .list-box ul { padding-left: 0; list-style: none; }
+    .list-box ul li { padding-left: 20px; position: relative; }
+    .list-box ul li::before { content: "✦"; color: #4c51bf; position: absolute; left: 0; font-size: 0.75rem; top: 2px; }
+    dl dt { font-weight: 700; color: #4c51bf; margin-top: 8px; }
+    dl dd { margin-left: 16px; color: #4a5568; font-size: 0.9rem; }
+    .link-grid { display: flex; flex-wrap: wrap; gap: 14px; }
+    .link-box { background: #f0f4ff; border-radius: 10px; padding: 14px 20px; flex: 1; min-width: 180px; }
+    .link-box h4 { font-size: 0.82rem; color: #4c51bf; margin-bottom: 8px; font-family: 'Fira Code', monospace; }
+    .link-box a { color: #4c51bf; font-size: 0.95rem; text-decoration: none; border-bottom: 2px solid #a3bffa; }
+    .link-box a:hover { color: #e53e3e; }
+    .link-box a.btn-link { display: inline-block; background: #4c51bf; color: white; padding: 6px 16px; border-radius: 20px; text-decoration: none; border: none; margin-top: 4px; font-size: 0.88rem; }
+    .marquee-wrap { background: #2d3748; border-radius: 10px; padding: 14px; overflow: hidden; margin-bottom: 12px; }
+    marquee { color: #ffd700; font-size: 1rem; font-weight: 700; }
+    .img-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 14px; }
+    .img-card { border-radius: 10px; overflow: hidden; border: 3px solid #e2e8f0; }
+    .img-card img { width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.3s; }
+    .img-card img:hover { transform: scale(1.05); }
+    .img-card p { padding: 8px 12px; font-size: 0.82rem; color: #718096; background: #f7fafc; text-align: center; font-family: 'Fira Code', monospace; }
+    @media(max-width:700px){ .lists-grid,.img-grid,.headings-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <h1>Practical 3 — HTML5 Elements</h1>
+  <p>Text Formatting · Lists · Hyperlinks · Marquee · Images</p>
+</div>
+<div class="container">
+  <div class="card text-demo">
+    <h2>✏️ Text Formatting</h2>
+    <div class="section-label">&lt;h1&gt; to &lt;h4&gt; Headings</div>
+    <div class="headings-grid">
+      <h1>Heading H1</h1><h2>Heading H2</h2><h3>Heading H3</h3><h4>Heading H4</h4>
+    </div>
+    <hr class="divider">
+    <div class="section-label">Inline Elements</div>
+    <p>
+      <strong>&lt;strong&gt; bold</strong> · <em>&lt;em&gt; italic</em> · <u>&lt;u&gt; underline</u> ·
+      <mark>&lt;mark&gt; highlight</mark> · <del>&lt;del&gt; strikethrough</del> ·
+      X<sup>2</sup> superscript · H<sub>2</sub>O subscript ·
+      <code style="background:#f0f4ff;padding:2px 6px;border-radius:4px;color:#805ad5">&lt;code&gt;inline code</code>
+    </p>
+    <hr class="divider">
+    <div class="section-label">&lt;blockquote&gt;</div>
+    <blockquote style="border-left:4px solid #4c51bf;padding:12px 20px;background:#f0f4ff;border-radius:0 8px 8px 0;font-style:italic;color:#555;margin-top:8px;">
+      "The web is more a social creation than a technical one." — Tim Berners-Lee
+    </blockquote>
+  </div>
+
+  <div class="card">
+    <h2>📋 Lists</h2>
+    <div class="lists-grid">
+      <div class="list-box">
+        <div class="section-label">&lt;ol&gt; Ordered</div>
+        <h3>Web Layers</h3>
+        <ol><li>HTML — Structure</li><li>CSS — Styling</li><li>JavaScript — Behavior</li><li>Backend — Logic</li><li>Database — Data</li></ol>
+      </div>
+      <div class="list-box">
+        <div class="section-label">&lt;ul&gt; Unordered</div>
+        <h3>HTML5 Features</h3>
+        <ul><li>Semantic Elements</li><li>Canvas API</li><li>Geolocation API</li><li>Local Storage</li><li>Video & Audio</li></ul>
+      </div>
+      <div class="list-box">
+        <div class="section-label">&lt;dl&gt; Description</div>
+        <h3>Glossary</h3>
+        <dl><dt>HTML</dt><dd>HyperText Markup Language</dd><dt>CSS</dt><dd>Cascading Style Sheets</dd><dt>DOM</dt><dd>Document Object Model</dd></dl>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔗 Hyperlinks</h2>
+    <div class="link-grid">
+      <div class="link-box"><h4>External Link</h4><a href="https://www.google.com" target="_blank">Visit Google ↗</a></div>
+      <div class="link-box"><h4>Internal Link</h4><a href="#lists">Go to Lists</a></div>
+      <div class="link-box"><h4>Email Link</h4><a href="mailto:student@sbjain.edu">student@sbjain.edu</a></div>
+      <div class="link-box"><h4>Button Style</h4><a href="#" class="btn-link">Click Me</a></div>
+      <div class="link-box"><h4>Download</h4><a href="#" download>⬇ Download File</a></div>
+      <div class="link-box"><h4>Tel Link</h4><a href="tel:+911234567890">📞 Call Us</a></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📢 Marquee</h2>
+    <div class="marquee-wrap">
+      <marquee behavior="scroll" direction="left">🌐 Welcome to Web Designing! &nbsp;&nbsp; HTML5 · CSS3 · JavaScript · Bootstrap</marquee>
+    </div>
+    <div class="marquee-wrap">
+      <marquee behavior="alternate" style="color:#48bb78">✦ S.B. Jain Institute of Technology — Department of CSE ✦</marquee>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🖼️ Images</h2>
+    <div class="section-label">&lt;img&gt; with src, alt, width</div>
+    <div class="img-grid">
+      <div class="img-card"><img src="https://picsum.photos/seed/html5/400/200" alt="HTML5 Image"><p>alt="HTML5 Image"</p></div>
+      <div class="img-card"><img src="https://picsum.photos/seed/web2/400/200" alt="Web Design"><p>alt="Web Design"</p></div>
+      <div class="img-card"><img src="https://picsum.photos/seed/code3/400/200" alt="Coding"><p>alt="Coding"</p></div>
+    </div>
+    <figure style="margin-top:18px;display:inline-block;text-align:center;">
+      <img src="https://picsum.photos/seed/tech5/300/180" alt="Tech Image" style="border-radius:8px;display:block;width:300px;">
+      <figcaption style="margin-top:8px;font-size:0.88rem;color:#718096;font-style:italic;">Fig 1: Technology in Web Design</figcaption>
+    </figure>
+  </div>
+</div>
+</body>
+</html>
