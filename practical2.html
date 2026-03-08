@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 2 - HTML5 Semantic Structure</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Source Sans 3', sans-serif; background: #faf9f6; color: #2c2c2c; }
+    header { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+    header .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; }
+    header .logo span { color: #e94560; }
+    header nav { display: flex; gap: 24px; }
+    header nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; font-weight: 600; }
+    header nav a:hover { color: #e94560; }
+    .page-wrapper { display: grid; grid-template-columns: 1fr 300px; gap: 0; max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+    section { background: white; border-radius: 12px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    section h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #1a1a2e; margin-bottom: 14px; border-bottom: 3px solid #e94560; padding-bottom: 10px; display: inline-block; }
+    section p { line-height: 1.8; color: #555; }
+    article.hero { background: white; border-radius: 12px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 5px solid #e94560; }
+    article.hero h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #1a1a2e; margin-bottom: 10px; }
+    article.hero .meta { font-size: 0.85rem; color: #999; margin-bottom: 14px; }
+    article.hero p { line-height: 1.8; color: #555; }
+    aside { margin-left: 24px; }
+    .widget { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .widget h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #1a1a2e; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #f0f0f0; }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-cloud span { background: #1a1a2e; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; }
+    .tag-cloud span:hover { background: #e94560; }
+    .recent li { list-style: none; padding: 8px 0; border-bottom: 1px solid #f5f5f5; font-size: 0.9rem; color: #555; }
+    .recent li::before { content: "▸ "; color: #e94560; }
+    footer { background: #1a1a2e; color: rgba(255,255,255,0.7); text-align: center; padding: 30px 20px; }
+    footer .footer-grid { display: grid; grid-template-columns: repeat(3,1fr); max-width: 900px; margin: 0 auto 20px; gap: 30px; text-align: left; }
+    footer h4 { color: white; margin-bottom: 12px; }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 6px; font-size: 0.88rem; }
+    footer .bottom { font-size: 0.82rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; }
+    .html-tag { display: inline-block; background: #e94560; color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; font-family: monospace; margin-bottom: 6px; }
+    @media(max-width:768px){ .page-wrapper { grid-template-columns: 1fr; } aside { margin-left: 0; } header { flex-direction: column; gap: 14px; } footer .footer-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Tech<span>Blog</span></div>
+  <nav><a href="#">Home</a><a href="#">Articles</a><a href="#">About</a><a href="#">Contact</a></nav>
+</header>
+<div class="page-wrapper">
+  <main>
+    <div class="html-tag">&lt;section&gt;</div>
+    <section>
+      <h2>Welcome to TechBlog</h2>
+      <p>This page demonstrates HTML5 semantic elements: <strong>&lt;header&gt;</strong>, <strong>&lt;nav&gt;</strong>, <strong>&lt;main&gt;</strong>, <strong>&lt;section&gt;</strong>, <strong>&lt;article&gt;</strong>, <strong>&lt;aside&gt;</strong>, and <strong>&lt;footer&gt;</strong>.</p>
+    </section>
+    <div class="html-tag">&lt;article&gt;</div>
+    <article class="hero">
+      <h2>Understanding HTML5 Semantic Elements</h2>
+      <p class="meta">📅 March 5, 2026 &nbsp;|&nbsp; ✍️ Web Design Dept</p>
+      <p>HTML5 semantic elements clearly describe their meaning to both the browser and the developer. Unlike generic &lt;div&gt; tags, elements like &lt;article&gt;, &lt;section&gt;, and &lt;aside&gt; convey the role of the content, improving accessibility and SEO.</p>
+    </article>
+    <div class="html-tag">&lt;section&gt;</div>
+    <section>
+      <h2>Why Semantics Matter</h2>
+      <p>Semantic HTML improves accessibility for screen readers, helps search engines index content correctly, makes code easier to maintain, and provides a clear document outline.</p>
+    </section>
+  </main>
+  <aside>
+    <div class="html-tag">&lt;aside&gt;</div>
+    <div class="widget">
+      <h3>Tags Used</h3>
+      <div class="tag-cloud">
+        <span>&lt;header&gt;</span><span>&lt;nav&gt;</span><span>&lt;main&gt;</span>
+        <span>&lt;section&gt;</span><span>&lt;article&gt;</span><span>&lt;aside&gt;</span><span>&lt;footer&gt;</span>
+      </div>
+    </div>
+    <div class="widget">
+      <h3>Recent Articles</h3>
+      <ul class="recent">
+        <li>CSS Grid Layout Guide</li>
+        <li>Responsive Design Tips</li>
+        <li>JavaScript ES6 Features</li>
+        <li>Web Accessibility 101</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-grid">
+    <div><h4>About</h4><ul><li>Our Mission</li><li>Team</li><li>Careers</li></ul></div>
+    <div><h4>Resources</h4><ul><li>Documentation</li><li>Tutorials</li><li>Blog</li></ul></div>
+    <div><h4>Connect</h4><ul><li>GitHub</li><li>LinkedIn</li><li>Twitter</li></ul></div>
+  </div>
+  <div class="bottom">&lt;footer&gt; — © 2026 TechBlog | Practical 2 | S.B. Jain Institute</div>
+</footer>
+</body>
+</html>
